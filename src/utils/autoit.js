@@ -24,6 +24,8 @@ class Autoit {
                 let str = data.toString(),
                     lines = str.split(/(\r?\n)/g);
                 
+                console.log(str);
+                
                 resolve(str);
             });
             
