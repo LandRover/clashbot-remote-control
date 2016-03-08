@@ -1,7 +1,7 @@
 #include <src/clashbot.au3>
 
 If isClashBotRunning() Then
-    ConsoleWrite('true')
+    ConsoleWrite('true' & @CRLF)
 Else
-    ConsoleWrite('false')
+    ConsoleWrite('false' & @CRLF)
 EndIf
