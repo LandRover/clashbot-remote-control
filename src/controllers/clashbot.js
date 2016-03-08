@@ -14,7 +14,7 @@ class Clasbot {
         return new Promise((resolve, reject) => {
             console.log('STARTING PROMISE?2222222222222222222?');
             
-            Autoit.run('start').then(data => {
+            Autoit.run('is_running').then(data => {
                 console.log(data);
                 resolve(data);
             });
