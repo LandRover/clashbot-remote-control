@@ -7,6 +7,7 @@ Func botStart()
 EndFunc
 
 Func botStop()
+   bluestacksHide()
    btnToggle('stop', $CLASBOT_WINDOW_TOGGLE_START, 'start bot', 'stop')
 EndFunc
 
@@ -25,6 +26,8 @@ Func btnToggle($action = '', $toggleBtn = '', $textOptionA = '', $textOptionB = 
 	  ; Not running and not logged in.. Strage state.
 	  Return False
    EndIf
+   
+   WinActivate($CLASBOT_WINDOW) ; brint to front each toggle. might prevent some odd bugs.
 
    Local $btnToggleText = ControlGetText($CLASBOT_WINDOW, '', $toggleBtn)
 
@@ -35,7 +38,6 @@ Func btnToggle($action = '', $toggleBtn = '', $textOptionA = '', $textOptionB = 
    EndIf
 
 EndFunc
-
 
 
 Func loadClashBotApp()

@@ -8,18 +8,29 @@ class Clasbot {
     }
     
     
+    start() {
+        return this._execute('start');
+    }
+    
+    
+    stop() {
+        return this._execute('stop');
+    }
+    
+    
     isRunning() {
-        return new Promise((resolve, reject) => {
-            Autoit.run('is_running').then(data => {
-                resolve(data);
-            });
-        });
+        return this._execute('is_running');
     }
     
     
     isStarted() {
+        return this._execute('is_started');
+    }
+    
+    
+    _execute(method) {
         return new Promise((resolve, reject) => {
-            Autoit.run('is_started').then(data => {
+            Autoit.run(method).then(data => {
                 resolve(data);
             });
         });
