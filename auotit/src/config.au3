@@ -1,4 +1,4 @@
-Global $CLASHBOT_VER  = 'ClashBot v7.10.4 (Build 1843)';
+Global $CLASHBOT_VER  = 'ClashBot v7';
 Global $CLASHBOT_PATH = 'C:\CLASH_BOT\'
 Global $CLASHBOT_EXEC = 'ClashBot.exe'
 
