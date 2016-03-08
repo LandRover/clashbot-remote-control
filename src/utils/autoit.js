@@ -2,7 +2,7 @@
 
 const spawn = require('child_process').spawn,
       autoit_exe = 'c:\\progra~2\\AutoIt3\\AutoIt3.exe',
-      autoit_scripts = __dirname + '\\..\\..\\autoit\\',
+      autoit_scripts = __dirname + '/../../autoit/',
       fs = require('fs');
 
 class Autoit {
