@@ -7,7 +7,7 @@ class Clasbot {
     
     
     isRunning() {
-        
+        return true;
     }
 }
 
