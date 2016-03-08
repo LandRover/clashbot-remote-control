@@ -12,7 +12,7 @@ class Autoit {
     
     
     run(script) {
-        let scriptPath = fs.realpath(autoit_scripts + '/' + script + '.au3');
+        let scriptPath = 'C:\\Bot\\clashbot-remote-control\\auotit/' + script + '.au3';
         
         console.log(['DEBUG', 'running', autoit_exe, scriptPath]);
         
