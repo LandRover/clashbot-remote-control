@@ -9,9 +9,11 @@ class Clasbot {
     
     
     isRunning() {
-        console.log('STARTING PROMISE??');
+        console.log('STARTING PROMISE??11111');
         
         return new Promise((resolve, reject) => {
+            console.log('STARTING PROMISE?2222222222222222222?');
+            
             Autoit.run('start').then(data => {
                 console.log('DONE??');
                 resolve(data);
