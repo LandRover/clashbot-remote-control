@@ -15,7 +15,7 @@ class Clasbot {
             console.log('STARTING PROMISE?2222222222222222222?');
             
             Autoit.run('start').then(data => {
-                console.log('DONE??');
+                console.log(data);
                 resolve(data);
             });
         });
