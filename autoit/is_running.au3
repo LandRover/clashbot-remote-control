@@ -1,6 +1,6 @@
 #include <src/clashbot.au3>
 
-If isClashBotRunning() Then
+If isClashBotRunning() AND isLoggedIn() Then
     ConsoleWrite('true' & @CRLF)
 Else
     ConsoleWrite('false' & @CRLF)
