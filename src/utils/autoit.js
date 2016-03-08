@@ -18,9 +18,8 @@ class Autoit {
         
         return new Promise((resolve, reject) => {
             let child = spawn(autoit_exe, [scriptPath]);
-            spawn.stdout.setEncoding('utf8');
-        
-            spawn.stdout.on('data', data => {
+
+            child.stdout.on('data', data => {
                 let str = data.toString(),
                     lines = str.split(/(\r?\n)/g);
                 
