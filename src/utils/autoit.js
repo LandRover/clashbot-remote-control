@@ -32,7 +32,7 @@ class Autoit {
             });
             
             child.on('close', () => {
-                resolve(outputBuffer);
+                resolve(outputBuffer.toString());
             });
         });
     }

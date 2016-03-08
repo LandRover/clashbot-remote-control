@@ -11,7 +11,6 @@ class Clasbot {
     isRunning() {
         return new Promise((resolve, reject) => {
             Autoit.run('is_running').then(data => {
-                console.log(data);
                 resolve(data);
             });
         });
