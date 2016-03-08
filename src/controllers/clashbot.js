@@ -16,7 +16,7 @@ class Clasbot {
             
             Autoit.run('start').then(data => {
                 console.log(data);
-                resolve(true);
+                resolve(data);
             });
         });
     }
