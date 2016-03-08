@@ -15,9 +15,6 @@ class Autoit {
         let scriptPath = autoit_scripts + script + '.au3',
             outputBuffer = '';
         
-        
-        console.log(['DEBUG', 'running', autoit_exe, __dirname, scriptPath]);
-        
         return new Promise((resolve, reject) => {
             let child = spawn(autoit_exe, [scriptPath]);
 
