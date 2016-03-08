@@ -16,11 +16,11 @@ class Autoit {
         
         console.log(['DEBUG', 'running', autoit_exe, __dirname, scriptPath]);
         
-        let proc = spawn(autoit_exe, [scriptPath]);
-        proc.stdout.setEncoding('utf8');
-        
         return new Promise((resolve, reject) => {
-            proc.stdout.on('data', data => {
+            let child = spawn(autoit_exe, [scriptPath]);
+            child.stdout.setEncoding('utf8');
+        
+            child.stdout.on('data', data => {
                 let str = data.toString(),
                     lines = str.split(/(\r?\n)/g);
                 
@@ -29,11 +29,11 @@ class Autoit {
                 resolve(str);
             });
             
-            proc.on('error', e => {
+            child.on('error', e => {
                 reject(e);
             });
             
-            proc.on('close', () => {
+            child.on('close', () => {
                 // ended.
             });
         });
