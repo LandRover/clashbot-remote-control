@@ -8,6 +8,7 @@ import cors from 'koa-cors';
 import bodyParser from 'koa-bodyparser';
 import session from 'koa-generic-session';
 
+
 export default function middleware() {
   return compose([
     logger(),
