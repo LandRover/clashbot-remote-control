@@ -14,7 +14,7 @@ class Autoit {
     run(script) {
         let scriptPath = autoit_scripts + '\\'+ script + '.au3';
         
-        console.log(['DEBUG', 'running', autoit_exe, scriptPath]);
+        console.log(['DEBUG', 'running', autoit_exe, __dirname, scriptPath]);
         
         let proc = spawn(autoit_exe, [scriptPath]);
         proc.stdout.setEncoding('utf8');
