@@ -13,7 +13,7 @@ class Autoit {
     
     run(script) {
         let scriptPath = autoit_scripts + script + '.au3',
-            outputBuffer;
+            outputBuffer = '';
         
         
         console.log(['DEBUG', 'running', autoit_exe, __dirname, scriptPath]);
@@ -30,7 +30,7 @@ class Autoit {
             });
             
             child.on('close', () => {
-                resolve(outputBuffer.toString());
+                resolve(outputBuffer);
             });
         });
     }
