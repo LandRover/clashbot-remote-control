@@ -6,6 +6,6 @@ export default router => {
   let clasbot = new ClashBot();
   
   router
-    .get('/is_active',
+    .get('/is_running',
       async ctx => ctx.body = await clasbot.isRunning({}))
 };
