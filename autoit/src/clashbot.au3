@@ -98,3 +98,20 @@ Func isClashBotRunning()
 	  Return True
    EndIf
 EndFunc
+
+
+Func isStarted()
+   If Not isClashBotRunning() AND Not isLoggedIn() Then
+	  msgNotify('err', 'clash bot not running.')
+	  ; Not running and not logged in.. Strage state.
+	  Return False
+   EndIf
+
+   Local $btnToggleText = ControlGetText($CLASBOT_WINDOW, '', $CLASBOT_WINDOW_TOGGLE_START)
+
+   If 'Stop' == $btnToggleText Then
+      Return True
+   Else
+      Return False
+   EndIf
+EndFunc

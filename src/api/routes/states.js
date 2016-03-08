@@ -8,4 +8,7 @@ export default router => {
   router
     .get('/is_running',
       async ctx => ctx.body = await clasbot.isRunning())
+      
+    .get('/is_started',
+      async ctx => ctx.body = await clasbot.isStarted())
 };

@@ -15,6 +15,15 @@ class Clasbot {
             });
         });
     }
+    
+    
+    isStarted() {
+        return new Promise((resolve, reject) => {
+            Autoit.run('is_started').then(data => {
+                resolve(data);
+            });
+        });
+    }
 }
 
 export default Clasbot;
