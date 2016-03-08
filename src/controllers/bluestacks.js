@@ -1,9 +1,14 @@
 'use strict';
 
-export default class Bluestacks {
+class Bluestacks {
     constructor() {
         
     }
     
     
+    isRunning() {
+        
+    }
 }
+
+export default Bluestacks;

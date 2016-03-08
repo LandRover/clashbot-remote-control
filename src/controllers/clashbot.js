@@ -1,7 +1,14 @@
 'use strict';
 
-export default class Clasbot {
+class Clasbot {
     constructor() {
         
     }
+    
+    
+    isRunning() {
+        
+    }
 }
+
+export default Clasbot;
