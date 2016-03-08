@@ -12,7 +12,9 @@ class Autoit {
     
     
     run(script) {
-        let scriptPath = autoit_scripts + script + '.au3';
+        let scriptPath = autoit_scripts + script + '.au3',
+            outputBuffer;
+        
         
         console.log(['DEBUG', 'running', autoit_exe, __dirname, scriptPath]);
         
@@ -20,12 +22,7 @@ class Autoit {
             let child = spawn(autoit_exe, [scriptPath]);
 
             child.stdout.on('data', data => {
-                let str = data.toString(),
-                    lines = str.split(/(\r?\n)/g);
-                
-                console.log(str);
-                
-                resolve(str);
+                outputBuffer += data;
             });
             
             child.on('error', e => {
@@ -33,7 +30,7 @@ class Autoit {
             });
             
             child.on('close', () => {
-                // ended.
+                resolve(outputBuffer);
             });
         });
     }
