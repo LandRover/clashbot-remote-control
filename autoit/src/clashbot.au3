@@ -20,7 +20,7 @@ EndFunc
 
 
 Func btnToggle($action = '', $toggleBtn = '', $textOptionA = '', $textOptionB = '')
-   If Not isProcessRunning() AND Not isLoggedIn() Then
+   If Not isClashBotRunning() AND Not isLoggedIn() Then
 	  msgNotify('err', 'clash bot not running.')
 	  ; Not running and not logged in.. Strage state.
 	  Return False
@@ -41,7 +41,7 @@ EndFunc
 Func loadClashBotApp()
    Local $hWnd = WinGetHandle($CLASBOT_WINDOW)
 
-   If Not isProcessRunning() Then
+   If Not isClashBotRunning() Then
 	  runBot()
    ElseIf Not isLoggedIn() Then
 	  login()
@@ -81,7 +81,7 @@ Func isLoggedIn()
    WinWait($CLASBOT_WINDOW, '', 10)
    Local $loginBtn = ControlGetHandle($CLASBOT_WINDOW, '', $CLASBOT_WINDOW_BTN_LOGIN);
 
-   If @error AND isProcessRunning() Then
+   If @error AND isClashBotRunning() Then
 	  Return True
    Else
 	  Return False
@@ -89,7 +89,7 @@ Func isLoggedIn()
 EndFunc
 
 
-Func isProcessRunning()
+Func isClashBotRunning()
    Local $hWnd = WinGetHandle($CLASBOT_WINDOW)
 
    If @error Then
