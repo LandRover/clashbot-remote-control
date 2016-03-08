@@ -23,8 +23,6 @@ class Autoit {
 
             child.stdout.on('data', data => {
                 outputBuffer += data;
-                console.log('OG');
-                console.log(data);
             });
             
             child.on('error', e => {
