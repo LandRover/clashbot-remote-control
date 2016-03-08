@@ -1,7 +1,7 @@
 'use strict';
 
 const spawn = require('child_process').spawn,
-      autoit_exe = 'C:\\Program Files (x86)\\AutoIt3\\AutoIt3.exe',
+      autoit_exe = 'c:\\progra~2\\\AutoIt3\\AutoIt3.exe',
       autoit_scripts = __dirname + '/../../autoit';
 
 class Autoit {
