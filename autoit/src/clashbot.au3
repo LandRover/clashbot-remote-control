@@ -1,19 +1,23 @@
 #include <config.au3>
 #include <utils.au3>
 
+
 Func botStart()
    bluestacksShow()
    btnToggle('start bot', $CLASBOT_WINDOW_TOGGLE_START, 'start bot', 'stop')
 EndFunc
+
 
 Func botStop()
    bluestacksHide()
    btnToggle('stop', $CLASBOT_WINDOW_TOGGLE_START, 'start bot', 'stop')
 EndFunc
 
+
 Func bluestacksShow()
    btnToggle('show bluestacks', $CLASBOT_WINDOW_TOGGLE_HIDE, 'show bluestacks', 'hide bluestacks')
 EndFunc
+
 
 Func bluestacksHide()
    btnToggle('hide bluestacks', $CLASBOT_WINDOW_TOGGLE_HIDE, 'show bluestacks', 'hide bluestacks')
@@ -37,6 +41,16 @@ Func btnToggle($action = '', $toggleBtn = '', $textOptionA = '', $textOptionB = 
 	  ; invalid state or already in the requested state.
    EndIf
 
+EndFunc
+
+
+Func closeClashBotApp()
+   Local $hWnd = WinGetHandle($CLASBOT_WINDOW)
+
+   If isClashBotRunning() Then
+      WinWait($hWnd, '', 5);
+      WinClose($hWnd);
+   EndIf
 EndFunc
 
 
