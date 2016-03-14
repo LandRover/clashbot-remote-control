@@ -18,6 +18,11 @@ class Clasbot {
     }
     
     
+    close() {
+        return this._execute('close');
+    }
+    
+    
     isRunning() {
         return this._execute('is_running');
     }
