@@ -118,7 +118,7 @@ EndFunc
 
 Func isStarted()
    If Not isClashBotRunning() AND Not isLoggedIn() Then
-	  msgNotify('err', 'clash bot not running.')
+	  ; msgNotify('err', 'clash bot not running.')
 	  ; Not running and not logged in.. Strage state.
 	  Return False
    EndIf
