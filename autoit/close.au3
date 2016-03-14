@@ -4,7 +4,7 @@ closeClashBotApp()
 Sleep(500)
 
 If Not isClashBotRunning() Then
-    ConsoleWrite('true' & @CRLF)
+    ConsoleWrite('true')
 Else
-    ConsoleWrite('false' & @CRLF)
+    ConsoleWrite('false')
 EndIf

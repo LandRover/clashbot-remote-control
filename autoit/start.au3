@@ -6,7 +6,7 @@ botStart()
 Sleep(2000)
 
 If isClashBotRunning() AND isLoggedIn() AND isStarted() Then
-    ConsoleWrite('true' & @CRLF)
+    ConsoleWrite('true')
 Else
-    ConsoleWrite('false' & @CRLF)
+    ConsoleWrite('false')
 EndIf
