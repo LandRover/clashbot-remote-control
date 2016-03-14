@@ -94,7 +94,7 @@ EndFunc
 
 
 Func isLoggedIn()
-   WinWait($CLASBOT_WINDOW, '', 10)
+   WinWait($CLASBOT_WINDOW, '', 4)
    Local $loginBtn = ControlGetHandle($CLASBOT_WINDOW, '', $CLASBOT_WINDOW_BTN_LOGIN);
 
    If @error AND isClashBotRunning() Then
