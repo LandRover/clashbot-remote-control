@@ -48,7 +48,7 @@ Func closeClashBotApp()
    Local $hWnd = WinGetHandle($CLASBOT_WINDOW)
 
    If isClashBotRunning() Then
-      WinWait($hWnd, '', 5);
+      WinActivate($CLASBOT_WINDOW)
       WinClose($hWnd);
    EndIf
 EndFunc
@@ -81,7 +81,7 @@ EndFunc
 
 
 Func closeConfirmationBox()
-   WinWait($CLASBOT_CONFIRM_WINDOW, '', 5);
+   WinWait($CLASBOT_CONFIRM_WINDOW, '', 2);
    WinClose($CLASBOT_CONFIRM_WINDOW);
 EndFunc
 
