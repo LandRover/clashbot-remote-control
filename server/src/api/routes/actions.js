@@ -1,18 +1,17 @@
 'use strict';
 
 import ClashBot from '../../controllers/clashbot';
-import {apiPrefix} from '../config';
 
 export default router => {
   let clasbot = new ClashBot();
   
   router
-    .get(apiPrefix + '/start',
+    .get('/start',
       async ctx => ctx.body = await clasbot.start())
       
-    .get(apiPrefix + '/stop',
+    .get('/stop',
       async ctx => ctx.body = await clasbot.stop())
       
-    .get(apiPrefix + '/close',
+    .get('/close',
       async ctx => ctx.body = await clasbot.close())
 };

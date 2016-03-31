@@ -1,3 +1,3 @@
 'use strict';
 
-export const apiPrefix = '/api';
+export const prefix = '/api';
