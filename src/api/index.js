@@ -8,7 +8,7 @@ import {prefix} from './config';
 const routes = importDir('./routes');
 
 export default function api() {
-  const router = new Router({prefix});
+  const router = new Router();
 
   Object.keys(routes).forEach(name => routes[name](router));
 
