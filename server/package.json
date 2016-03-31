@@ -1,8 +1,8 @@
 {
-  "name": "clashbot-remote-control",
+  "name": "clashbot-remote-control-server",
   "version": "1.0.0",
   "description": "",
-  "main": "src/remote.js",
+  "main": "index.js",
   "dependencies": {
     "dotenv": "^2.0.0",
     "import-dir": "0.0.1",
