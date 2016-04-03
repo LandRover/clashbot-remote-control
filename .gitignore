@@ -36,3 +36,4 @@ data
 .env
 
 dist
+app/dist/build
