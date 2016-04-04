@@ -1,14 +1,14 @@
 import angular from 'angular';
 
 export default class FacebookController {
-    constructor($scope, $facebook) {
+    constructor($scope, FacebookService) {
         this.$scope = $scope;
-        this.$facebook = $facebook;
+        this.FacebookService = FacebookService;
         
         $scope.isLoggedIn = false;
         
         $scope.login = () => {
-            $facebook.login().then(() => {
+            FacebookService.login().then(() => {
                 this.refresh();
             });
         };
@@ -18,7 +18,7 @@ export default class FacebookController {
     
     
     refresh() {
-        this.$facebook.api('/me').then(
+        this.FacebookService.me().then(
             response => {
                 this.$scope.welcomeMsg = 'Welcome ' + response.name;
                 this.$scope.isLoggedIn = true;
@@ -30,4 +30,4 @@ export default class FacebookController {
     }
 }
 
-FacebookController.$inject = ['$scope', '$facebook'];
+FacebookController.$inject = ['$scope', 'FacebookService'];
