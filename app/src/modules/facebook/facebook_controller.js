@@ -5,8 +5,6 @@ export default class FacebookController {
         this.$scope = $scope;
         this.FacebookService = FacebookService;
         
-        this.setLogin(false);
-
         $scope.login = () => {
             FacebookService.login().then(() => {
                 this.refresh();
@@ -20,20 +18,12 @@ export default class FacebookController {
     refresh() {
         this.FacebookService.me().then(
             response => {
-                this.setLogin(true);
                 this.$scope.welcomeMsg = 'Welcome ' + response.name;
             },
             err => {
                 this.$scope.welcomeMsg = 'Please log in';
             });
         
-    }
-    
-    
-    setLogin(isLoggedIn) {
-        this.$scope.isLoggedIn = isLoggedIn;
-        
-        return this;
     }
 }
 
