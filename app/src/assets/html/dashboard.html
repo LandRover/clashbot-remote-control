@@ -8,5 +8,15 @@
       <md-icon md-svg-icon="share"></md-icon>
     </md-button>
     
-    WOOHOO
+    <div ng-controller="FacebookController">
+        <div class="container">
+            <h4>
+                {{welcomeMsg}}
+            </h4>
+            <button type="button" ng-click="login()" ng-hide="isLoggedIn" class="btn btn-default navbar-btn">
+                Login
+            </button>
+        </div>
+    </div>
+    
 </md-content>

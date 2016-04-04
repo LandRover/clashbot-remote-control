@@ -1,4 +1,4 @@
-export default function facebookInit(Directive) {
+export default function fbInit(Directive) {
      // If we've already installed the SDK, we're done
      if (document.getElementById('facebook-jssdk'))
          return;
