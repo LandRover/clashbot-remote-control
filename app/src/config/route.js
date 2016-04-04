@@ -1,15 +1,15 @@
 export default function routeConfig($routeProvider) {
     $routeProvider
         .when('/', {
-            templateUrl: 'debug/assets/html/dashboard.html'
+            templateUrl: 'src/assets/html/dashboard.html'
         })
         
         .when('/:folder/:tpl', {
-            templateUrl: attr => 'assets/html/' + attr.folder + '/' + attr.tpl + '.html'
+            templateUrl: attr => 'src/assets/html/' + attr.folder + '/' + attr.tpl + '.html'
         })
         
         .when('/:tpl', {
-            templateUrl: attr => 'assets/html/' + attr.tpl + '.html'
+            templateUrl: attr => 'src/assets/html/' + attr.tpl + '.html'
         })
         
         .otherwise({
