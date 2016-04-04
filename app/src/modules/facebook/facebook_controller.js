@@ -11,7 +11,7 @@ export default class FacebookController {
             $facebook.login().then(() => {
                 this.refresh();
             });
-        }
+        };
 
         this.refresh();
     }
