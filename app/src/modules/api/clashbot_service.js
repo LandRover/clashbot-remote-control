@@ -7,7 +7,34 @@ export default class ClashbotService {
     }
     
     
+    start() {
+        
+    }
     
+    
+    stop() {
+        
+    }
+    
+    
+    close() {
+        
+    }
+    
+    
+    is_started() {
+        
+    }
+    
+    
+    is_running() {
+        
+    }
+    
+    
+    _api() {
+        return this.$http();
+    }
 }
 
 ClashbotService.$inject = ['$http'];
