@@ -4,6 +4,7 @@ import run from './config/run';
 import route from './config/route';
 import animate from './config/animate';
 import icons from './config/icons';
+import facebook from './config/facebook';
 import exception from './config/exception';
 import noSpace from './filters/nospace';
 
@@ -43,6 +44,7 @@ export default angular
     // Config elements
     .config(exception)
     .config(animate)
+    .config(facebook)
     .config(route)
     .config(icons)
     
