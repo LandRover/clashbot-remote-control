@@ -28,6 +28,12 @@ export default class FacebookController {
             });
         
     }
+    
+    
+    setLogin(isLoggedIn) {
+        
+        return this;
+    }
 }
 
 FacebookController.$inject = ['$scope', 'FacebookService'];
