@@ -1,5 +1,17 @@
-<md-list ng-show="isLoggedIn()">
-  <md-list-item ng-repeat="it in users">
+<md-list>
+  <div ng-controller="FacebookController as fb">
+      <div class="container">
+          <h4>
+              {{welcomeMsg}}
+          </h4>
+
+          <button type="button" ng-click="login()" ng-hide="fb.isLoggedIn" class="btn btn-default navbar-btn">
+              Login
+          </button>
+      </div>
+  </div>
+    
+  <md-list-item ng-repeat="it in users" ng-show="isLoggedIn()">
       <md-button ng-click="selectUser(it)" ng-class="{'selected': it === selected}">
         <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
           {{it.name}}

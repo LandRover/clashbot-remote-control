@@ -6,13 +6,6 @@ export default class MenuService {
         
         this.menuList = [
             {
-                id: 'login',
-                name: 'Login',
-                avatar: 'svg-1',
-                content: 'FB Login',
-                level: 0
-            },
-            {
                 id: 'start',
                 name: 'Start Bot',
                 avatar: 'svg-2',

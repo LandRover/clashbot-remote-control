@@ -8,7 +8,6 @@ import ClashbotService from './api/clashbot_service';
 
 angular.module(moduleName, [])
     .service('MenuService', MenuService)
-    .service('UserService', UserService)
     .service('FacebookService', FacebookService)
     .service('ClashbotService', ClashbotService)
     ;
