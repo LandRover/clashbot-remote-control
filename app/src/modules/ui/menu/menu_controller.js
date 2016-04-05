@@ -9,12 +9,10 @@ export default class MenuController {
 
         this.$scope.users = [];
         this.$scope.selected = null;
-        
         this.$scope.selectUser = this.selectUser.bind(this);
         this.$scope.toggleUsersList = this.toggleUsersList.bind(this);
         this.$scope.isLoggedIn = this.isLoggedIn.bind(this);
 
-        
         // Load all registered users
         UserService
             .loadAllUsers()

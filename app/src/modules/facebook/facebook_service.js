@@ -4,7 +4,7 @@ export default class FacebookService {
 
     constructor($facebook) {
         this.$facebook = $facebook;
-        this._setLogin(false);
+        this._setLogin(true);
     }
     
     
