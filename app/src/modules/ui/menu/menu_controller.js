@@ -1,7 +1,7 @@
 import angular from 'angular';
 
 export default class MenuController {
-    constructor(UserService, FacebookService, $scope, $mdSidenav, $mdBottomSheet, $log) {
+    constructor(MenuService, FacebookService, $scope, $mdSidenav, $mdBottomSheet, $log) {
         this.$log = $log;
         this.$scope = $scope;
         this.$mdSidenav = $mdSidenav;
@@ -14,8 +14,8 @@ export default class MenuController {
         this.$scope.isLoggedIn = this.isLoggedIn.bind(this);
 
         // Load all registered users
-        UserService
-            .loadAllUsers()
+        MenuService
+            .loadMenuItems()
             .then(users => {
                 this.$scope.users = users;
                 this.$scope.selected = users[0];
@@ -26,6 +26,7 @@ export default class MenuController {
     isLoggedIn() {
         return this.FacebookService.isLoggedIn();
     }
+    
     
     /**
      * Select the current avatars
@@ -84,4 +85,4 @@ export default class MenuController {
 
 }
 
-MenuController.$inject = ['UserService', 'FacebookService', '$scope', '$mdSidenav', '$mdBottomSheet', '$log'];
+MenuController.$inject = ['MenuService', 'FacebookService', '$scope', '$mdSidenav', '$mdBottomSheet', '$log'];
