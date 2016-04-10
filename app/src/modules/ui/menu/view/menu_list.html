@@ -1,14 +1,10 @@
 <md-list>
   <div ng-controller="FacebookController as fb">
-      <div class="container">
-          <h4>
-              {{welcomeMsg}}
-          </h4>
-
-          <button type="button" ng-click="login()" ng-hide="isLoggedIn()" class="btn btn-default navbar-btn">
-              Login
-          </button>
-      </div>
+    <md-content class="layout-padding flex">
+      <h4 class="md-title">{{welcomeMsg}}</h4>
+      
+      <md-button class="md-raised" ng-click="login()" ng-hide="isLoggedIn()"> LOGIN </md-button>
+    </md-content>
   </div>
     
   <md-list-item ng-repeat="it in users" ng-show="isLoggedIn()">
