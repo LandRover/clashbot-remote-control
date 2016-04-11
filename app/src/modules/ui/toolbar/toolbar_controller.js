@@ -1,29 +1,17 @@
 import angular from 'angular';
 
 export default class ToolbarController {
-    constructor($element, $location, $rootScope) {
-        this.$element = $element;
-        this.$location = $location;
-        this.$rootScope = $rootScope;
-    }
-    
-    getName(name) {
-        if (name !== undefined) {
-            return name;
-        }
+    constructor($scope, $mdSidenav) {
+        this.$scope = $scope;
+        this.$mdSidenav = $mdSidenav;
         
-        return this.$element.find('a').text().trim();
+        this.$scope.toggleList = this.toggleList.bind(this);
     }
     
-    
-    setBreadcrumb(name) {
-        this.$rootScope.pageTitle = this.getName(name);
+    toggleList() {
+        this.$mdSidenav('left').toggle();
     }
     
-    
-    isSelected(href) {
-        return this.$location.path() == href.slice(1, href.length);
-    }
 }
 
-ToolbarController.$inject = ['$element', '$location', '$rootScope'];
+ToolbarController.$inject = ['$scope', '$mdSidenav'];
