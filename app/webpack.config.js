@@ -8,7 +8,7 @@ const babel = {
     entry: path.resolve(PATH_BASE, 'src/bootstrap.js'),
 
     output: {
-        path: path.resolve(PATH_BASE, 'dist/build'),
+        path: path.resolve(PATH_BASE, 'dist/js'),
         filename: 'app.min.js',
         libraryTarget: 'umd',
         pathinfo: false
