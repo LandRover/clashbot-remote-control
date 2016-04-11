@@ -1,5 +1,5 @@
 export default function FacebookConfig($facebookProvider) {
-    $facebookProvider.setAppId('515368631950289');
+    $facebookProvider.setAppId(window.config.appID);
 }
 
 FacebookConfig.$inject = ['$facebookProvider'];
