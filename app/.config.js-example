@@ -1,4 +1,0 @@
-window.config = {
-    appID: 13245678,
-    api: 'http://backend.com/path/api'
-};
