@@ -5,6 +5,7 @@ export default class FacebookService {
     constructor($facebook) {
         this.$facebook = $facebook;
         this._setLogin(false);
+        this.user = null;
     }
     
     
@@ -13,12 +14,23 @@ export default class FacebookService {
         
         me.then(response => {
             this._setLogin(true);
+            this.user = response;
             console.log('Logged in as ' + response.name);
         }, err => {
             console.log('Please log in');
         });
         
         return me;
+    }
+    
+    getFBUserID() {
+        if (null === this.user) {
+            console.log('please login first');
+            
+            return 0;
+        }
+        
+        return this.user.id;
     }
     
     

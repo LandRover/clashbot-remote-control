@@ -2,8 +2,9 @@ import angular from 'angular';
 
 export default class ClashbotService {
 
-    constructor($http) {
+    constructor($http, FacebookService) {
         this.$http = $http;
+        this.FacebookService = FacebookService;
     }
     
     
@@ -35,9 +36,12 @@ export default class ClashbotService {
     _api(method) {
         return this.$http({
             method: 'GET',
-            url: '/proxy/' + method
+            url: '/proxy/' + method,
+            data: {
+                id: this.FacebookService.getFBUserID()
+            }
         });
     }
 }
 
-ClashbotService.$inject = ['$http'];
+ClashbotService.$inject = ['$http', 'FacebookService'];
