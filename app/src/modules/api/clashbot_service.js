@@ -35,7 +35,7 @@ export default class ClashbotService {
     _api(method) {
         return this.$http({
             method: 'GET',
-            url: '/api/' + method
+            url: '/proxy/' + method
         });
     }
 }
