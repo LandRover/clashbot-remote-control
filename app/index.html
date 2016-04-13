@@ -9,8 +9,8 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
 
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:400,500,700,400italic" />
-  <link rel="stylesheet" href="node_modules/angular-material/angular-material.css" />
-  <link rel="stylesheet" href="src/assets/app.css" />
+  <link rel="stylesheet" href="assets/angular-material.min.css" />
+  <link rel="stylesheet" href="assets/css/app.css" />
 
   <style type="text/css">
       /**
@@ -33,14 +33,14 @@
        var js, pjs = d.getElementsByTagName(s)[0];
        if (d.getElementById(id)) {return;}
        js = d.createElement(s); js.id = id;
-       js.src = 'dist/js/app.min.js';
+       js.src = 'js/app.min.js';
        pjs.parentNode.insertBefore(js, pjs);
      }(document, 'script', 'app-js'));
   </script>
 </head>
 
 <body layout="row" scroll-spy>
-  <div ng-include src="'src/assets/html/ui/sidebar.html'"></div>
+  <div ng-include src="'assets/html/ui/sidebar.html'"></div>
   
   <div flex layout="column" tabIndex="-1" role="main" class="md-whiteframe-z2">
     <cl-toolbar></cl-toolbar>

@@ -4,9 +4,10 @@ module.exports = {
             files: 'src/**/*.js'
         },
         
-        assets: {
-            files: 'src/assets/**'
-        },
+        assets: [
+            'src/assets/**',
+            'node_modules/angular-material/angular-material.min.css'
+        ],
         
         dist: {
             assets: 'dist/assets'
