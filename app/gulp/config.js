@@ -3,12 +3,23 @@ module.exports = {
         js: {
             files: 'src/**/*.js'
         },
+        
+        assets: {
+            files: 'src/assets/**'
+        },
+        
+        dist: {
+            assets: 'dist/assets'
+        },
+        
         tasks: {
             files: 'gulp/**/*.js'
         },
+        
         test: {
             files: 'test/**/*.spec.js'
         },
+        
         modules: {
             npm: 'node_modules/**'
         }
