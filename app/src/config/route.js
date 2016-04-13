@@ -4,12 +4,8 @@ export default function routeConfig($routeProvider) {
             templateUrl: 'assets/html/dashboard.html'
         })
         
-        .when('/:folder/:tpl', {
-            templateUrl: attr => 'assets/html/' + attr.folder + '/' + attr.tpl + '.html'
-        })
-        
-        .when('/:tpl', {
-            templateUrl: attr => 'assets/html/' + attr.tpl + '.html'
+        .when('/proxy/:action', {
+            templateUrl: attr => 'assets/html/proxy.html'
         })
         
         .otherwise({

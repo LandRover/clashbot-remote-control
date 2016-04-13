@@ -7,10 +7,10 @@
     </md-content>
   </div>
     
-  <md-list-item ng-repeat="it in users" ng-show="isLoggedIn()">
-      <md-button ng-click="selectUser(it)" ng-class="{'selected': it === selected}">
-        <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
-          {{it.name}}
+  <md-list-item ng-repeat="action in actions" ng-show="isLoggedIn()">
+      <md-button ng-click="selectAction(action)" ng-class="{'selected': action === selected}">
+        <md-icon md-svg-icon="{{action.avatar}}" class="avatar"></md-icon>
+          {{action.name}}
       </md-button>
   </md-list-item>
 </md-list>

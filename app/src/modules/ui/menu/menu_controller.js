@@ -7,18 +7,18 @@ export default class MenuController {
         this.$mdSidenav = $mdSidenav;
         this.FacebookService = FacebookService;
 
-        this.$scope.users = [];
+        this.$scope.actions = [];
         this.$scope.selected = null;
-        this.$scope.selectUser = this.selectUser.bind(this);
+        this.$scope.selectAction = this.selectAction.bind(this);
         this.$scope.toggleUsersList = this.toggleUsersList.bind(this);
         this.$scope.isLoggedIn = this.isLoggedIn.bind(this);
 
-        // Load all registered users
+        // Load all registered actions
         MenuService
             .loadMenuItems()
-            .then(users => {
-                this.$scope.users = users;
-                this.$scope.selected = users[0];
+            .then(actions => {
+                this.$scope.actions = actions;
+                this.$scope.selected = actions[0];
             });
     }
     
@@ -32,8 +32,9 @@ export default class MenuController {
      * Select the current avatars
      * @param menuId
      */
-    selectUser(user) {
-        this.$scope.selected = angular.isNumber(user) ? this.$scope.users[user] : user;
+    selectAction(user) {
+        this.$scope.selected = angular.isNumber(user) ? this.$scope.actions[user] : user;
+        window.location.href = '#/proxy/'+this.$scope.selected.id;
         
         return this;
     }
@@ -55,7 +56,7 @@ export default class MenuController {
     makeContact(selectedUser) {
         this.$mdBottomSheet.show({
             controllerAs: 'cp',
-            templateUrl: './src/users/view/contact_sheet.html',
+            templateUrl: './actions/view/contact_sheet.html',
             controller: ['$mdBottomSheet', ContactSheetController],
             parent: angular.element(document.getElementById('content'))
         }).then(clickedItem => {
