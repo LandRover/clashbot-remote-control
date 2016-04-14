@@ -1,9 +1,9 @@
-Global $CLASHBOT_VER  = 'ClashBot v7';
+Global $LOADER_EXEC = 'ClashVIPLoader.exe'
 Global $CLASHBOT_PATH = 'C:\CLASH_BOT\'
 Global $CLASHBOT_EXEC = 'ClashBot.exe'
 
-Global $CLASBOT_WINDOW = '[CLASS:WindowsForms10.Window.8.app.0.31d2b0c_r12_ad1]'
-Global $CLASBOT_WINDOW_BTN_LOGIN = '[CLASS:WindowsForms10.BUTTON.app.0.31d2b0c_r12_ad1; INSTANCE:1]'
+Global $CLASBOT_WINDOW = 'ClashBot C# 7'
+Global $CLASBOT_WINDOW_BTN_LOGIN = '[CLASS:WindowsForms10.BUTTON.app.0.31d2b0c_r14_ad1; INSTANCE:1]'
 Global $CLASBOT_WINDOW_TOGGLE_START = '[CLASS:WindowsForms10.BUTTON.app.0.31d2b0c_r12_ad1; INSTANCE:17]'
 Global $CLASBOT_WINDOW_BTN_PAUSE = '[CLASS:WindowsForms10.BUTTON.app.0.31d2b0c_r12_ad1; INSTANCE:5]'
 Global $CLASBOT_WINDOW_TOGGLE_HIDE = '[CLASS:WindowsForms10.BUTTON.app.0.31d2b0c_r12_ad1; INSTANCE:6]'
@@ -13,3 +13,5 @@ Global $CLASBOT_WINDOW_LOG = '[CLASS:WindowsForms10.RichEdit20W.app.0.31d2b0c_r1
 Global $CLASBOT_CONFIRM_WINDOW = '[CLASS:#32770]'
 Global $CLASBOT_CONFIRM_BTN_DONE = '[CLASS:Button; INSTANCE:1]'
 
+Global $LOADER_WINDOW = 'ClashVIPLoader'
+Global $LOADER_WINDOW_BTN_LAUNCH = '[CLASS:TButton; INSTANCE:1]'
