@@ -25,30 +25,30 @@ export default class ProxyController {
     start() {
         console.log('STARTT');
         
-        this.ClashbotService.start().then(() => {
+        this.ClashbotService.start().then(response => {
             console.log('RESPONSE ARRIVED');
                         
-            console.log(arguments);
+            console.log(response);
         });
     }
     
     stop() {
         console.log('STOPP');
         
-        this.ClashbotService.start().then(() => {
+        this.ClashbotService.stop().then(response => {
             console.log('RESPONSE ARRIVED');
                         
-            console.log(arguments);
+            console.log(response);
         });
     }
     
     status() {
         console.log('STATUSS');
         
-        this.ClashbotService.start().then(() => {
+        this.ClashbotService.status().then(response => {
             console.log('RESPONSE ARRIVED');
                         
-            console.log(arguments);
+            console.log(response);
         });
     }
 }
