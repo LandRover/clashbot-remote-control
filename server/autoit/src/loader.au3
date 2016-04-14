@@ -1,16 +1,15 @@
 #include <config.au3>
-#include <clashbot.au3>
 
 Func loadLoaderApp()
    Local $hWnd = WinGetHandle($LOADER_WINDOW)
 
    If Not isLoaderRunning() Then
 	  runLoader()
-
-	  WinActivate($LOADER_WINDOW) ; bring to front.
    Else
 	  ; all good.. continue. not extra steps needed.
    EndIf
+
+   loaderLaunch()
 EndFunc
 
 
@@ -27,16 +26,16 @@ EndFunc
 
 Func runLoader()
    Run($CLASHBOT_PATH & $LOADER_EXEC, $CLASHBOT_PATH)
-
-   launch()
 EndFunc
 
 
-Func launch()
+Func loaderLaunch()
    WinWait($LOADER_WINDOW, '', 8)
    Sleep(1000)
 
    If Not isClashBotRunning() Then
+	  WinActivate($LOADER_WINDOW) ; bring to front.
+
 	  click($LOADER_WINDOW, $LOADER_WINDOW_BTN_LAUNCH)
    EndIf
 EndFunc

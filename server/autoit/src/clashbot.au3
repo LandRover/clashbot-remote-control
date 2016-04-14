@@ -1,6 +1,6 @@
 #include <config.au3>
 #include <utils.au3>
-
+#include <loader.au3>
 
 Func botStart()
    bluestacksShow()
@@ -26,11 +26,12 @@ EndFunc
 
 Func btnToggle($action = '', $toggleBtn = '', $textOptionA = '', $textOptionB = '')
    If Not isClashBotRunning() AND Not isLoggedIn() Then
-	  msgNotify('err', 'clash bot not running.')
+	  ConsoleWrite('clash bot not running.')
+	  ; msgNotify('err', '')
 	  ; Not running and not logged in.. Strage state.
 	  Return False
    EndIf
-   
+
    WinActivate($CLASBOT_WINDOW) ; brint to front each toggle. might prevent some odd bugs.
 
    Local $btnToggleText = ControlGetText($CLASBOT_WINDOW, '', $toggleBtn)
@@ -58,7 +59,8 @@ Func loadClashBotApp()
    Local $hWnd = WinGetHandle($CLASBOT_WINDOW)
 
    If Not isClashBotRunning() Then
-	  runBot()
+	  ConsoleWrite('[loadClashBotApp] ClashBot is NOT running.')
+	  loadLoaderApp() ; load clashbot using only the loader.
    ElseIf Not isLoggedIn() Then
 	  login()
    Else
