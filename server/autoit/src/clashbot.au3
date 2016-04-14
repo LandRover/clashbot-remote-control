@@ -26,7 +26,7 @@ EndFunc
 
 Func btnToggle($action = '', $toggleBtn = '', $textOptionA = '', $textOptionB = '')
    If Not isClashBotRunning() AND Not isLoggedIn() Then
-	  ConsoleWrite('clash bot not running.')
+	  ConsoleWrite('[btnToggle] clash bot not running.')
 	  ; msgNotify('err', '')
 	  ; Not running and not logged in.. Strage state.
 	  Return False
@@ -61,6 +61,7 @@ Func loadClashBotApp()
    If Not isClashBotRunning() Then
 	  ConsoleWrite('[loadClashBotApp] ClashBot is NOT running.')
 	  loadLoaderApp() ; load clashbot using only the loader.
+	  ; used to run bot directly, now uses loader
    ElseIf Not isLoggedIn() Then
 	  login()
    Else
@@ -83,6 +84,7 @@ EndFunc
 
 
 Func closeConfirmationBox()
+   Sleep(1500)
    WinWait($CLASBOT_CONFIRM_WINDOW, '', 2);
    WinClose($CLASBOT_CONFIRM_WINDOW);
 EndFunc
