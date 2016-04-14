@@ -6,11 +6,11 @@ Func loadLoaderApp()
 
    If Not isLoaderRunning() Then
 	  runLoader()
+
+	  WinActivate($LOADER_WINDOW) ; bring to front.
    Else
 	  ; all good.. continue. not extra steps needed.
    EndIf
-
-   WinActivate($LOADER_WINDOW) ; bring to front.
 EndFunc
 
 
