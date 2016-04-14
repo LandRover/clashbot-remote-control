@@ -39,7 +39,7 @@ export default class ClashbotService {
         return this.$http({
             method: 'GET',
             url: '/api/proxy/' + method,
-            data: {
+            params: {
                 id: this.FacebookService.getFBUserID()
             }
         });
