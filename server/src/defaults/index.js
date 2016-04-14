@@ -14,9 +14,10 @@ export default function defaults(ctx, next) {
         'version': '1.0.0'
     };
 
-    return next().then(() => {
-        if ('/' === ctx.path) {
-            ctx.body = Template.bake(indexHTML, map);
-        }
-    });
+    
+    if ('/' === ctx.path) {
+        return ctx.body = Template.bake(indexHTML, map);
+    }
+    
+    return next();
 }
