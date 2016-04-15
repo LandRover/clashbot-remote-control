@@ -23,23 +23,58 @@ export default class ProxyController {
     
     
     start() {
-        console.log('STARTT');
+        let text = {
+            'true': 'Im running, please wait for your donations for the next 15minutes',
+            'false': 'Waiting on Supercell preloader, wait few moments. Checking the status again in 3 seconds'
+        };
+        
+        this.$scope.remoteAppStatus = 'Starting the bot...';
+        this.$scope.loadingProgress = true;
         
         this.ClashbotService.start().then(response => {
-            console.log('RESPONSE ARRIVED');
-                        
-            console.log(response);
+            let status = text[response.data];
+            
+            this.$scope.loadingProgress = false;
+            this.$scope.remoteAppStatus = status;
+            
+            return response.data;
+        }).then(status => {
+            if ('true' === status) return;
+            
+            console.log('Not started completly, restartin ...');
+            setTimeout(() => {
+                console.log('Starting again');
+                this.start();
+            }, 3000);
         });
     }
     
+    
     stop() {
-        console.log('STOPP');
+        let text = {
+            'true': 'Stopped.. ',
+            'false': 'Failed to stop...'
+            
+        };
+        this.$scope.remoteAppStatus = 'Stopping the bot...';
+        this.$scope.loadingProgress = true;
         
         this.ClashbotService.stop().then(response => {
-            console.log('RESPONSE ARRIVED');
-                        
-            console.log(response);
+            let status = text[response.data];
+            
+            this.$scope.loadingProgress = false;
+            this.$scope.remoteAppStatus = status;
         });
+    }
+    
+    
+    donationsList() {
+        console.log('donations list');
+    }
+    
+    
+    baraksStatus() {
+        console.log('TBD');
     }
 }
 
