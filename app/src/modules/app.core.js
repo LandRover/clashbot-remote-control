@@ -8,6 +8,7 @@ import ngRoute from 'angular-route';
 import ngFacebook from 'ng-facebook';
 import angularLoadingBar from 'angular-loading-bar';
 
+
 export default angular
     .module(moduleName, [
         'ngRoute',
