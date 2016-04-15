@@ -68,12 +68,12 @@ export default class ProxyController {
     }
     
     
-    donationsList() {
+    donations() {
         console.log('donations list');
     }
     
     
-    baraksStatus() {
+    roaster() {
         console.log('TBD');
     }
 }

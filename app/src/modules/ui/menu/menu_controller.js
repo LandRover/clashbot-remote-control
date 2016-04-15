@@ -10,7 +10,7 @@ export default class MenuController {
         this.$scope.actions = [];
         this.$scope.selected = null;
         this.$scope.selectAction = this.selectAction.bind(this);
-        this.$scope.toggleUsersList = this.toggleUsersList.bind(this);
+        this.$scope.toggleMenuSidebar = this.toggleMenuSidebar.bind(this);
         this.$scope.isLoggedIn = this.isLoggedIn.bind(this);
 
         // Load all registered actions
@@ -35,6 +35,7 @@ export default class MenuController {
     selectAction(user) {
         this.$scope.selected = angular.isNumber(user) ? this.$scope.actions[user] : user;
         window.location.href = '#/proxy/'+this.$scope.selected.id;
+        this.toggleMenuSidebar();
         
         return this;
     }
@@ -43,7 +44,7 @@ export default class MenuController {
     /**
      * Hide or Show the 'left' sideNav area
      */
-    toggleUsersList() {
+    toggleMenuSidebar() {
         this.$mdSidenav('left').toggle();
         
         return this;
