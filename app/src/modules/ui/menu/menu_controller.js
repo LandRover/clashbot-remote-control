@@ -34,7 +34,7 @@ export default class MenuController {
      */
     selectAction(user) {
         this.$scope.selected = angular.isNumber(user) ? this.$scope.actions[user] : user;
-        window.location.href = '#/proxy/'+this.$scope.selected.id;
+        window.location.href = this.$scope.selected.url;
         this.toggleMenuSidebar();
         
         return this;

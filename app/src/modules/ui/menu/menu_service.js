@@ -7,6 +7,7 @@ export default class MenuService {
         this.menuList = [
             {
                 id: 'start',
+                url: '#/proxy/start',
                 name: 'Start Bot',
                 avatar: 'svg-2',
                 content: 'Starts all bots',
@@ -14,6 +15,7 @@ export default class MenuService {
             },
             {
                 id: 'stop',
+                url: '#/proxy/stop',
                 name: 'Stop Bot',
                 avatar: 'svg-3',
                 content: 'Stops all bot',
@@ -21,6 +23,7 @@ export default class MenuService {
             },
             {
                 id: 'donations',
+                url: '#/proxy/donations',
                 name: 'Donations List',
                 avatar: 'svg-4',
                 content: 'All possible donation keywords and baraks defaults',
@@ -28,6 +31,7 @@ export default class MenuService {
             },
             {
                 id: 'roaster',
+                url: '#/proxy/roaster',
                 name: 'Baraks Status',
                 avatar: 'svg-5',
                 content: 'Current baraks status',
