@@ -10,18 +10,16 @@ export default class DashboardController {
         this.$scope = $scope;
         this.FacebookService = FacebookService;
         this.ClashbotService = ClashbotService;
-        
-        
 
         this.checkStatus();
     }
     
     
     checkStatus() {
-        this.$scope.status = 'checking status... please wait.'
+        this.$scope.status = 'Checking status...';
         this.$scope.loadingProgress = true;
         
-        this.ClashbotService.status().then(response => {
+        this.ClashbotService.isStarted().then(response => {
             this.$scope.loadingProgress = false;
             
             this.$scope.status = text[response];

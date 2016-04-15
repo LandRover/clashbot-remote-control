@@ -41,16 +41,6 @@ export default class ProxyController {
             console.log(response);
         });
     }
-    
-    status() {
-        console.log('STATUSS');
-        
-        this.ClashbotService.status().then(response => {
-            console.log('RESPONSE ARRIVED');
-                        
-            console.log(response);
-        });
-    }
 }
 
 ProxyController.$inject = ['$scope', '$location', 'ClashbotService'];

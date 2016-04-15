@@ -14,4 +14,10 @@ export default router => {
       
     .get('/proxy/close',
       async ctx => ctx.body = await remoteAutoIt.close())
+      
+    .get('/proxy/is_started',
+      async ctx => ctx.body = await remoteAutoIt.isStarted())
+      
+    .get('/proxy/is_running',
+      async ctx => ctx.body = await remoteAutoIt.isRunning())
 };

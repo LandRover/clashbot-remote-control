@@ -23,12 +23,12 @@ export default class ClashbotService {
     }
     
     
-    is_started() {
+    isStarted() {
         return this._api('is_started');
     }
     
     
-    is_running() {
+    isRunning() {
         return this._api('is_running');
     }
     
