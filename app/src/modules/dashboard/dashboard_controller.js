@@ -16,13 +16,12 @@ export default class DashboardController {
     
     
     checkStatus() {
-        this.$scope.status = 'Checking status...';
+        this.$scope.remoteAppStatus = 'Checking status...';
         this.$scope.loadingProgress = true;
         
         this.ClashbotService.isStarted().then(response => {
             this.$scope.loadingProgress = false;
-            
-            this.$scope.status = text[response];
+            this.$scope.remoteAppStatus = text[response.data];
             
         });
     }
