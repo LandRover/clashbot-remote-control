@@ -6,6 +6,14 @@ export default class MenuService {
         
         this.menuList = [
             {
+                id: 'dashboard',
+                url: '#/',
+                name: 'Dashboard',
+                avatar: 'svg-6',
+                content: 'Dashboard and quick status',
+                level: 1
+            },
+            {
                 id: 'start',
                 url: '#/proxy/start',
                 name: 'Start Bot',
