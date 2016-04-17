@@ -86,7 +86,48 @@ export default class ProxyController {
     
     
     roaster() {
-        console.log('TBD');
+        this.$scope.remoteAppStatus = 'Loading Baraks...';
+        this.$scope.loadingProgress = true;
+        
+        this.ClashbotService.log().then(response => {
+            let data = response.data.slice().reverse();
+            
+            this.$scope.loadingProgress = false;
+            //this.$scope.remoteAppStatus = response.data.join('<br/>');
+            
+            let required = this._parseBuild(this._searchArr('[Build] Required:', data)),
+                trained = this._parseBuild(this._searchArr('[Build] Trained:', data)),
+                training = this._parseBuild(this._searchArr('[Build] Training:', data)),
+                need = this._parseBuild(this._searchArr('[Build] Need:', data));
+            
+            console.log([required, trained, training, need]);
+        });
+    }
+    
+    
+    _searchArr(needle, haystack) {
+        for (let i = 0, len = haystack.length; i <= len; i++) {
+            if (-1 < haystack[i].indexOf(needle)) {
+                return haystack[i];
+            }
+        }
+        
+        return false;
+    }
+    
+    
+    _parseBuild(str) {
+        let input = str.substr(str.indexOf(': ') + 2),
+            troops = input.split(', '),
+            output = {};
+        
+        for (let i = 0, len = troops.length; i <= len; i++) {
+            let troop = troops[i].split(' ');
+            
+            output[troop[1].toLower()] = Number(troop[0]);
+        }
+        
+        return output;
     }
 }
 
