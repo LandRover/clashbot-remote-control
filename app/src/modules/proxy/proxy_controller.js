@@ -81,7 +81,21 @@ export default class ProxyController {
     
 
     donations() {
-        console.log('donations list');
+        let donations = {
+            'Keyword': 'Description (Amount)',
+            'PAKA9': 'PEKKA x2',
+            'ANAK9': 'Giant x12',
+            'KOSEM9': 'Wizard x8',
+            'GOLEM9': 'Golem x3',
+            'ADAMA9': 'Earthquake x2',
+            'FAST9': 'Haste x5',
+            'TRUFA9': 'Heal x2'
+        };
+        
+        this.$scope.remoteAppStatus = 
+            '<h2>To get a donation write these:</h2>' +
+            '<h4>** keywords can be mixed</h4>' + 
+            this.arrToTable('donations', 'Donations', donations);
     }
     
     
