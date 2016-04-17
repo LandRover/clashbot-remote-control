@@ -16,7 +16,9 @@ class Clasbot {
     log() {
         return new Promise((resolve, reject) => {
             Autoit.run('log').then(data => {
-                let rows = data.replace('\r', '').split('\n');
+                data = data.replace('\r', '');
+                let rows = data..split('\n');
+                
                 console.log(rows);
                 resolve(rows);
             });
