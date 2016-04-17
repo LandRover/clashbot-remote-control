@@ -18,7 +18,7 @@ class Clasbot {
             Autoit.run('log').then(data => {
                 let rows = data.split('\n');
                 console.log(rows);
-                resolve(data);
+                resolve(rows);
             });
         });
     }
