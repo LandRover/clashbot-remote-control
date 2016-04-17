@@ -20,4 +20,7 @@ export default router => {
       
     .get('/proxy/is_running',
       async ctx => ctx.body = await remoteAutoIt.isRunning())
+      
+    .get('/proxy/log',
+      async ctx => ctx.body = await remoteAutoIt.log())
 };
