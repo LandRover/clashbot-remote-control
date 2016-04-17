@@ -82,7 +82,7 @@ export default class ProxyController {
 
     donations() {
         let donations = {
-            'Keyword': 'Description (Amount)',
+            '<strong>Keyword></strong>': '<strong>Description (Amount)</strong>',
             'PAKA9': 'PEKKA x2',
             'ANAK9': 'Giant x12',
             'KOSEM9': 'Wizard x8',
