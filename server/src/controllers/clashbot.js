@@ -14,7 +14,13 @@ class Clasbot {
     
     
     log() {
-        return this._execute('log');
+        return new Promise((resolve, reject) => {
+            Autoit.run('log').then(data => {
+                let rows = data.split('\n');
+                console.log(rows);
+                resolve(data);
+            });
+        });
     }
     
     
