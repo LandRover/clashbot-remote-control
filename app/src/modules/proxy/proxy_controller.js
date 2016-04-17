@@ -1,7 +1,8 @@
 import angular from 'angular';
 
 export default class ProxyController {
-    constructor($scope, $location, ClashbotService) {
+    constructor($scope, $location, $sce, ClashbotService) {
+        this.$sce = $sce;
         this.$scope = $scope;
         this.$location = $location;
         this.ClashbotService = ClashbotService;
@@ -74,7 +75,7 @@ export default class ProxyController {
         
         this.ClashbotService.log().then(response => {
             this.$scope.loadingProgress = false;
-            this.$scope.remoteAppStatus = `<pre>{response.data}</pre>`;
+            this.$scope.remoteAppStatus = this.$sce.trustAsHtml('<pre>'+ response.data +'</pre>');
         });
     }
     
@@ -89,4 +90,4 @@ export default class ProxyController {
     }
 }
 
-ProxyController.$inject = ['$scope', '$location', 'ClashbotService'];
+ProxyController.$inject = ['$scope', '$location', '$sce', 'ClashbotService'];
