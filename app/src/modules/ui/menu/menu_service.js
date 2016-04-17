@@ -44,6 +44,14 @@ export default class MenuService {
                 avatar: 'svg-5',
                 content: 'Current baraks status',
                 level: 1
+            },
+            {
+                id: 'log',
+                url: '#/proxy/log',
+                name: 'log / debug',
+                avatar: 'svg-7',
+                content: 'Debug Log',
+                level: 1
             }
         ];
     }
