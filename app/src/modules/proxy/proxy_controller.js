@@ -72,7 +72,7 @@ export default class ProxyController {
         this.$scope.remoteAppStatus = 'Getting the log';
         this.$scope.loadingProgress = true;
         
-        this.ClashbotService.stop().then(response => {
+        this.ClashbotService.log().then(response => {
             this.$scope.loadingProgress = false;
             this.$scope.remoteAppStatus = response.data;
         });

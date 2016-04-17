@@ -13,6 +13,11 @@ export default class ClashbotService {
     }
     
     
+    log() {
+        return this._api('log');
+    }
+    
+    
     stop() {
         return this._api('stop');
     }
