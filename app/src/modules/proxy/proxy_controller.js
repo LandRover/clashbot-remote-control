@@ -100,7 +100,11 @@ export default class ProxyController {
                 training = this._parseBuild(this._searchArr('[Build] Training:', data)),
                 need = this._parseBuild(this._searchArr('[Build] Need:', data));
             
-            console.log([required, trained, training, need]);
+            this.$scope.remoteAppStatus = 
+                this.arrToTable('required', 'Required', required) + '<br/><br/>' +
+                this.arrToTable('trained', 'Trained', trained) + '<br/><br/>'
+                this.arrToTable('training', 'Training', training) + '<br/><br/>'
+                this.arrToTable('need', 'Need', need);
         });
     }
     
@@ -127,6 +131,24 @@ export default class ProxyController {
             
             output[troop[1]] = Number(troop[0]);
         }
+        
+        return output;
+    }
+    
+    
+    arrToTable(ID, title, haystack) {
+        let output = '<h2>'+ title +'</h2>';
+        
+        output += '<table id="'+ ID +'" class="troops">';
+        
+        for (let i in haystack) {
+            output += '<tr>';
+                output += '<td class="name">'+ haystack +'</td>';
+                output += '<td class="count">'+ haystack[i] +'</td>';
+            output += '</tr>';
+        }
+        
+        output += '</table><br/></br>';
         
         return output;
     }
