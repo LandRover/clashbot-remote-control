@@ -75,7 +75,7 @@ export default class ProxyController {
         
         this.ClashbotService.log().then(response => {
             this.$scope.loadingProgress = false;
-            this.$scope.remoteAppStatus = this.$sce.trustAsHtml('"<strong>"+ response.data +"</strong>"');
+            this.$scope.remoteAppStatus = this.$sce.trustAsHtml("<pre>"+ response.data +"</pre>");
         });
     }
     
