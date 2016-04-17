@@ -102,8 +102,8 @@ export default class ProxyController {
             
             this.$scope.remoteAppStatus = 
                 this.arrToTable('required', 'Required', required) + '<br/><br/>' +
-                this.arrToTable('trained', 'Trained', trained) + '<br/><br/>'
-                this.arrToTable('training', 'Training', training) + '<br/><br/>'
+                this.arrToTable('trained', 'Trained', trained) + '<br/><br/>' +
+                this.arrToTable('training', 'Training', training) + '<br/><br/>' +
                 this.arrToTable('need', 'Need', need);
         });
     }
@@ -143,7 +143,7 @@ export default class ProxyController {
         
         for (let i in haystack) {
             output += '<tr>';
-                output += '<td class="name">'+ haystack +'</td>';
+                output += '<td class="name">'+ i +'</td>';
                 output += '<td class="count">'+ haystack[i] +'</td>';
             output += '</tr>';
         }
