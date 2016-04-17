@@ -106,7 +106,7 @@ export default class ProxyController {
     
     
     _searchArr(needle, haystack) {
-        for (let i = 0, len = haystack.length; i <= len; i++) {
+        for (let i = 0, len = haystack.length; i < len; i++) {
             if (-1 < haystack[i].indexOf(needle)) {
                 return haystack[i];
             }
@@ -117,14 +117,15 @@ export default class ProxyController {
     
     
     _parseBuild(str) {
-        let input = str.substr(str.indexOf(': ') + 2),
-            troops = input.split(', '),
+        let input = str.substr(str.indexOf(': ') + 2);
+
+        let troops = input.split(', '),
             output = {};
         
-        for (let i = 0, len = troops.length; i <= len; i++) {
+        for (let i = 0, len = troops.length; i < len; i++) {
             let troop = troops[i].split(' ');
             
-            output[troop[1].toLower()] = Number(troop[0]);
+            output[troop[1]] = Number(troop[0]);
         }
         
         return output;
