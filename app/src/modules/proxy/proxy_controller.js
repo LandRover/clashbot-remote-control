@@ -54,8 +54,8 @@ export default class ProxyController {
         let text = {
             'true': 'Stopped.. ',
             'false': 'Failed to stop...'
-            
         };
+        
         this.$scope.remoteAppStatus = 'Stopping the bot...';
         this.$scope.loadingProgress = true;
         

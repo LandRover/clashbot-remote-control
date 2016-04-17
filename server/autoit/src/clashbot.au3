@@ -120,6 +120,13 @@ Func isClashBotRunning()
 EndFunc
 
 
+Func getLog()
+   Local $logText = ControlGetText($CLASBOT_WINDOW, '', $CLASBOT_WINDOW_LOG)
+   
+   Return $logText
+EndFunc
+
+
 Func isStarted()
    If Not isClashBotRunning() AND Not isLoggedIn() Then
 	  ; msgNotify('err', 'clash bot not running.')
