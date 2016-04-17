@@ -17,6 +17,11 @@ class RemoteAutoit {
     }
     
     
+    log() {
+        return this._execute('log');
+    }
+    
+    
     close() {
         return this._execute('close');
     }
