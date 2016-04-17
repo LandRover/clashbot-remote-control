@@ -148,7 +148,7 @@ export default class ProxyController {
             output += '</tr>';
         }
         
-        output += '</table><br/></br>';
+        output += '</table><br/>';
         
         return output;
     }
