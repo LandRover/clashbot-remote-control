@@ -7,6 +7,7 @@ import icons from './config/icons';
 import facebook from './config/facebook';
 import exception from './config/exception';
 import noSpace from './filters/nospace';
+import sanitize from './filters/sanitize';
 
 import appCore from './modules/app.core';
 import appServices from './modules/app.services';
@@ -50,6 +51,7 @@ export default angular
     
     // filters
     .filter('nospace', noSpace)
+    .filter('sanitize', sanitize)
     
     // RUNN!
     .run(run);

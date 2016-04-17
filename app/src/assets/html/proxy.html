@@ -7,6 +7,6 @@
         <md-progress-circular md-mode="indeterminate"></md-progress-circular>
       </div>
       
-      <div ng-bind-html="remoteAppStatus"></div>
+      <div ng-bind-html="remoteAppStatus | sanitize"></div>
     </div>
 </md-content>
