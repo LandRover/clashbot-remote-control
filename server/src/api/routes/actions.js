@@ -14,4 +14,7 @@ export default router => {
       
     .get('/close',
       async ctx => ctx.body = await clasbot.close())
+      
+    .get('/log',
+      async ctx => ctx.body = await clasbot.log())
 };

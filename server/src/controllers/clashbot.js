@@ -13,6 +13,11 @@ class Clasbot {
     }
     
     
+    log() {
+        return this._execute('log');
+    }
+    
+    
     stop() {
         return this._execute('stop');
     }
